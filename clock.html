@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            font-size: 6rem;
+            color: white;
+        }
+        h2{
+            font-size: 3rem;
+            margin-top: 5rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let h1 = document.createElement('h1')
+        let h2 = document.createElement('h2')
+
+        setInterval(()=>{
+        let h = new Date().getHours();
+        let min = new Date().getMinutes();
+        let sec = new Date().getSeconds();
+        let dt = new Date().getDate();
+        let mn = new Date().getMonth();
+        let yr = new Date().getFullYear();
+        document.querySelector('body').style.backgroundColor = `rgb(${sec*9},${sec*4},${sec*2})`
+        h1.textContent =   `${h} : ${min} : ${sec}`
+        h2.textContent =   `${dt} / ${mn} / ${yr}`
+        // h1.style.color = `rgb(${sec*20},${sec*4},${sec*2})`
+
+        document.body.appendChild(h1)
+        document.body.appendChild(h2)
+            
+        },1000)
+    </script>
+</body>
+</html>
